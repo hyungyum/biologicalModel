@@ -7,7 +7,44 @@
 그니까 예를 들어서, 최저화 기법이 swa, ... 있다하면
 
 
-폴더 설명 - 이건 나중에 gpt 시켜서 해야겠네요.
+폴더 설명 
 
-./
+classfication/
+│
+├── data/                   # Dataset storage
+│   ├── cifar-10-batches-py/ # CIFAR-10 dataset files
+│   └── ...                  # Other dataset folders
+│
+├── models/                 # Model architecture files
+│   ├── __init__.py         # Init file for model imports
+│   ├── resnet.py           # ResNet model definition
+│   └── toy_network.py      # A simple toy model for experimentation
+│
+├── runs/                   # TensorBoard log files
+│   ├── resnet18_cutmix_epoch50_20interval/    # Logs for cutmix experiment
+│   ├── resnet18_label_smoothing_epoch50/      # Logs for label smoothing experiment
+│   └── ...                  # Logs for other experiments
+│
+├── ckpt_cutmix/            # Checkpoints for CutMix model
+│   ├── model_050_0.8456.pth # Best performing CutMix model
+│   └── ...                  # Other saved checkpoints
+│
+├── ckpt_label_smoothing/   # Checkpoints for Label Smoothing model
+│   ├── model_050_0.8603.pth # Best performing Label Smoothing model
+│   └── ...                  # Other saved checkpoints
+│
+│
+├── scripts/                # Python training and evaluation scripts
+│   ├── cutmix.py           # CutMix implementation script
+│   ├── label_smoothing.py  # Label Smoothing implementation script
+│   └── ...                  # Other training scripts
+│
+├── README.md             
+├── cutmix.py                                    # CutMix implementation script     
+├── swa.py                                      # swa implementation script           
+├── label_smoothing.py                        # Label Smoothing implementation script     
+├── label_smoothing_plus_swa.py               # Label Smoothing + swa implementation script         
+└── label_smoothing_plus_swa_autoaugment.py   # autoaugment + Label Smoothing +swa implementation script               
+
+이런식으로 디렉토리구조가 되어있어야함.
 -
